@@ -23,7 +23,8 @@ function closeMenu() {
 }
 
 if (hamburger) {
-  hamburger.addEventListener('click', () => {
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
     hamburger.classList.contains('open') ? closeMenu() : openMenu();
   });
   overlay.addEventListener('click', closeMenu);
