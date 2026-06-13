@@ -95,7 +95,9 @@ img { display: block; max-width: 100%; }
 .nav-logo-img {
   height: 44px;
   width: auto;
+  max-width: 200px;
   display: block;
+  object-fit: contain;
 }
 
 .nav-menu {
@@ -882,4 +884,5 @@ img { display: block; max-width: 100%; }
   .hero-logo               { width: 240px; }
   .hero                    { padding-bottom: 68px; }
   .hero-scroll-hint        { display: none; }
+  .nav-logo-img            { height: 32px; max-width: 160px; }
 }
