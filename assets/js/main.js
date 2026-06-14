@@ -1,38 +1,39 @@
 // ── Hamburger menu ──
 const hamburger = document.getElementById('nav-hamburger');
 const navMenu   = document.getElementById('nav-menu');
-
-const overlay = document.createElement('div');
-overlay.classList.add('nav-overlay');
-document.body.appendChild(overlay);
+let menuOpen = false;
 
 function openMenu() {
+  menuOpen = true;
+  navMenu.style.right = '0px';
   hamburger.classList.add('open');
-  navMenu.classList.add('open');
-  overlay.classList.add('open');
-  hamburger.setAttribute('aria-expanded', 'true');
   document.body.style.overflow = 'hidden';
 }
 
 function closeMenu() {
+  menuOpen = false;
+  navMenu.style.right = '';
   hamburger.classList.remove('open');
-  navMenu.classList.remove('open');
-  overlay.classList.remove('open');
-  hamburger.setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
 }
 
 if (hamburger) {
-  hamburger.addEventListener('click', (e) => {
+  hamburger.addEventListener('click', function(e) {
     e.stopPropagation();
-    hamburger.classList.contains('open') ? closeMenu() : openMenu();
+    menuOpen ? closeMenu() : openMenu();
   });
-  overlay.addEventListener('click', closeMenu);
 }
+
+// Close when tapping outside the menu
+document.addEventListener('touchstart', function(e) {
+  if (menuOpen && !navMenu.contains(e.target) && e.target !== hamburger) {
+    closeMenu();
+  }
+});
 
 // ── Nav transparency on scroll ──
 const header = document.getElementById('site-header');
-if (header) {
+if (header && !header.classList.contains('page')) {
   function syncNav() {
     if (window.scrollY > 55) {
       header.classList.replace('transparent', 'solid');
