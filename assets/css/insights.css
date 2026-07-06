@@ -67,8 +67,15 @@
 .insight-card p { font-size: 0.86rem; color: var(--warm-gray-dk); line-height: 1.6; }
 
 /* Article page — optional lead photo, omitted entirely until one is supplied */
-.article-photo { aspect-ratio: 16/9; overflow: hidden; margin-bottom: 36px; }
-.article-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.article-photo { margin: 0 0 36px; }
+.article-photo-frame { aspect-ratio: 16/9; overflow: hidden; }
+.article-photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.article-photo-caption {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--warm-gray);
+  margin-top: 10px;
+}
 
 @media (max-width: 1024px) {
   .insights-featured { grid-template-columns: 1fr; }
