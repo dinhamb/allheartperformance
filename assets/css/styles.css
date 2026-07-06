@@ -359,11 +359,11 @@ img { display: block; max-width: 100%; }
 }
 .cta-minimal p {
   font-family: var(--font-display);
-  font-weight: 400;
-  font-style: italic;
-  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
   color: var(--navy);
-  margin-bottom: 34px;
+  max-width: 620px;
+  margin: 0 auto 34px;
 }
 
 /* ─── Animations ─────────────────────────────────── */
