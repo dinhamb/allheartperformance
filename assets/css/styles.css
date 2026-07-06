@@ -354,21 +354,20 @@ img { display: block; max-width: 100%; }
 
 /* ─── Home: Minimal closing CTA ──────────────────── */
 .cta-minimal {
-  padding: 170px var(--pad-x) 150px;
+  padding: 96px var(--pad-x);
+  margin-top: 110px;
   text-align: center;
 }
-.cta-minimal-box {
-  background: var(--cream);
-  border-radius: 6px;
-  max-width: 640px;
+.cta-minimal--navy { background: var(--navy); }
+.cta-minimal-inner {
+  max-width: 620px;
   margin: 0 auto;
-  padding: 48px 44px;
 }
 .cta-minimal p {
   font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(1.3rem, 2.2vw, 1.9rem);
-  color: var(--navy);
+  color: var(--off-white);
   margin: 0 auto 30px;
 }
 
@@ -979,8 +978,7 @@ img { display: block; max-width: 100%; }
   /* Nudge the crop on mobile so the recognisable rock stays in frame (runner falls off the left) */
   .hero-bg                 { background-position: 40% 55%; }
   .spread                  { padding: 96px var(--pad-x) 0; }
-  .cta-minimal             { padding: 110px var(--pad-x) 96px; }
-  .cta-minimal-box         { padding: 36px 26px; }
+  .cta-minimal             { padding: 72px var(--pad-x); margin-top: 64px; }
   .cta-minimal p           { font-size: 1.1rem; line-height: 1.5; }
   .nav-logo-img            { width: 220px; max-width: 60vw; height: auto; }
   .nav-hamburger           { display: flex; }
