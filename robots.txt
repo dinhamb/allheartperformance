@@ -3,4 +3,4 @@ Allow: /
 Disallow: /readiness.html
 Disallow: /thank-you.html
 
-Sitemap: https://allheartperformance.com/sitemap.xml
+Sitemap: https://allheartperformance.com.au/sitemap.xml
