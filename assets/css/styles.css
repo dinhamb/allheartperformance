@@ -357,13 +357,19 @@ img { display: block; max-width: 100%; }
   padding: 170px var(--pad-x) 150px;
   text-align: center;
 }
+.cta-minimal-box {
+  background: var(--cream);
+  border-radius: 6px;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 44px;
+}
 .cta-minimal p {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
   color: var(--navy);
-  max-width: 620px;
-  margin: 0 auto 34px;
+  margin: 0 auto 30px;
 }
 
 /* ─── Animations ─────────────────────────────────── */
@@ -974,6 +980,8 @@ img { display: block; max-width: 100%; }
   .hero-bg                 { background-position: 40% 55%; }
   .spread                  { padding: 96px var(--pad-x) 0; }
   .cta-minimal             { padding: 110px var(--pad-x) 96px; }
+  .cta-minimal-box         { padding: 36px 26px; }
+  .cta-minimal p           { font-size: 1.1rem; line-height: 1.5; }
   .nav-logo-img            { width: 220px; max-width: 60vw; height: auto; }
   .nav-hamburger           { display: flex; }
   .nav-cta                 { display: block !important; background: none !important;
