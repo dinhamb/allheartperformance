@@ -1326,7 +1326,7 @@ a.text-link:hover { border-color: var(--gold); color: var(--crimson); }
 }
 .credential-block p {
   font-size: 1rem;
-  color: var(--off-black);
+  color: var(--warm-gray-dk);
   line-height: 1.85;
   margin-bottom: 18px;
 }
