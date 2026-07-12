@@ -1313,7 +1313,7 @@ a.text-link:hover { border-color: var(--gold); color: var(--crimson); }
 /* ─── Coaching page: credential block + discipline line ──── */
 .credential-block {
   max-width: 640px;
-  margin: 0 0 30px;
+  margin: 0 0 56px;
 }
 .credential-block p {
   font-size: 1rem;
@@ -1322,16 +1322,6 @@ a.text-link:hover { border-color: var(--gold); color: var(--crimson); }
   margin-bottom: 18px;
 }
 .credential-block p:last-child { margin-bottom: 0; }
-
-.discipline-line {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.15rem;
-  color: var(--navy);
-  max-width: 640px;
-  margin: 0 0 56px;
-  line-height: 1.6;
-}
 
 /* ─── Plan card subhead — "You steer the week" / "Your coach steers the week" ── */
 .plan-steer {
