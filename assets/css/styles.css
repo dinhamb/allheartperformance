@@ -1279,3 +1279,179 @@ a.text-link:hover { border-color: var(--gold); color: var(--crimson); }
   line-height: 1.6;
 }
 .q-consent input[type="checkbox"] { accent-color: var(--crimson); width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; }
+
+/* ─── Coaching page: credential block + discipline line ──── */
+.credential-block {
+  max-width: 640px;
+  margin: 0 0 30px;
+}
+.credential-block p {
+  font-size: 1rem;
+  color: var(--off-black);
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+.credential-block p:last-child { margin-bottom: 0; }
+
+.discipline-line {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--navy);
+  max-width: 640px;
+  margin: 0 0 56px;
+  line-height: 1.6;
+}
+
+/* ─── Plan card subhead — "You steer the week" / "Your coach steers the week" ── */
+.plan-steer {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--crimson);
+  margin-bottom: 10px;
+}
+
+/* ─── Plan Comparison Table ──────────────────────── */
+.plan-compare { background: var(--cream); }
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 253, 248, 0.94);
+  box-shadow: var(--shadow-card);
+  font-size: 0.9rem;
+}
+
+.compare-table thead th {
+  padding: 26px 22px 22px;
+  text-align: center;
+  vertical-align: bottom;
+  border-bottom: 2px solid var(--warm-gray-lt);
+  background: rgba(255, 253, 248, 0.94);
+}
+.compare-table thead th.compare-feature {
+  text-align: left;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+}
+
+.compare-plan-name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--off-black);
+  line-height: 1.2;
+}
+.compare-plan-price {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+}
+
+/* Featured column — Full Coaching */
+.compare-table .compare-featured {
+  background: rgba(139, 30, 45, 0.045);
+}
+.compare-table thead th.compare-featured {
+  border-bottom-color: var(--crimson);
+  box-shadow: inset 0 3px 0 var(--crimson);
+}
+.compare-table thead th.compare-featured .compare-plan-price { color: var(--crimson); }
+
+.compare-table tbody th {
+  padding: 18px 22px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.88rem;
+  color: var(--off-black);
+  border-bottom: 1px solid rgba(160, 152, 144, 0.22);
+  max-width: 320px;
+}
+.compare-table tbody td {
+  padding: 18px 22px;
+  text-align: center;
+  color: var(--warm-gray-dk);
+  line-height: 1.55;
+  border-bottom: 1px solid rgba(160, 152, 144, 0.22);
+}
+.compare-table tbody tr:last-child th,
+.compare-table tbody tr:last-child td { border-bottom: none; }
+
+/* The rows that carry the argument */
+.compare-key-row th,
+.compare-key-row td { font-weight: 500; color: var(--off-black); }
+.compare-key-row .compare-featured { color: var(--crimson); }
+
+.tick { color: var(--crimson); font-size: 1.05rem; }
+.dash { color: var(--warm-gray-lt); }
+
+.compare-note {
+  margin-top: 34px;
+  max-width: 620px;
+  font-size: 0.94rem;
+  line-height: 1.85;
+  color: var(--warm-gray-dk);
+}
+.compare-note strong { color: var(--off-black); font-weight: 500; }
+
+/* ── Mobile: table → stacked cards, no horizontal scroll ── */
+@media (max-width: 768px) {
+  .compare-table,
+  .compare-table tbody,
+  .compare-table tr,
+  .compare-table tbody th,
+  .compare-table tbody td { display: block; width: 100%; }
+
+  .compare-table { box-shadow: none; background: none; }
+  .compare-table thead { display: none; }
+
+  .compare-table tbody tr {
+    background: rgba(255, 253, 248, 0.94);
+    box-shadow: var(--shadow-card);
+    margin-bottom: 16px;
+    padding: 20px 22px;
+  }
+
+  .compare-table tbody th {
+    padding: 0 0 12px;
+    border-bottom: 1px solid rgba(160, 152, 144, 0.22);
+    margin-bottom: 12px;
+    max-width: none;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .compare-table tbody td {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    text-align: right;
+    padding: 7px 0;
+    border-bottom: none;
+    background: none;
+  }
+  .compare-table tbody td::before {
+    content: attr(data-plan);
+    flex-shrink: 0;
+    text-align: left;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+  .compare-table tbody td.compare-featured { color: var(--crimson); }
+  .compare-table tbody td.compare-featured::before { color: var(--crimson); }
+  .compare-table tbody td.compare-featured .tick { color: var(--crimson); }
+}
