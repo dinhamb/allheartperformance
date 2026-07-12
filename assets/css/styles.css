@@ -370,6 +370,15 @@ img { display: block; max-width: 100%; }
   color: var(--off-white);
   margin: 0 auto 30px;
 }
+.cta-minimal-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+.cta-minimal-actions .btn { flex: 1 1 200px; justify-content: center; }
+@media (max-width: 480px) {
+  .cta-minimal-actions { flex-direction: column; }
+}
 
 /* ─── Animations ─────────────────────────────────── */
 @keyframes fadeUp {
