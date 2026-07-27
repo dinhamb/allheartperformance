@@ -70,6 +70,10 @@
 .article-photo { margin: 0 0 36px; }
 .article-photo-frame { aspect-ratio: 16/9; overflow: hidden; }
 .article-photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Full-frame variant: shows the photo at its own aspect ratio, uncropped,
+   for images where the full composition matters more than a fixed 16:9. */
+.article-photo-frame.full-frame { aspect-ratio: auto; }
+.article-photo-frame.full-frame img { height: auto; object-fit: contain; }
 .article-photo-caption {
   font-size: 0.82rem;
   font-style: italic;
