@@ -376,8 +376,16 @@ img { display: block; max-width: 100%; }
   justify-content: center;
 }
 .cta-minimal-actions .btn { flex: 1 1 200px; justify-content: center; }
-@media (max-width: 480px) {
-  .cta-minimal-actions { flex-direction: column; }
+/* Mobile: let the pair sit compact and centred rather than stretching into
+   full-width slabs — keeps them in scale with the rest of the site. */
+@media (max-width: 768px) {
+  .cta-minimal-actions { gap: 12px; flex-wrap: wrap; }
+  .cta-minimal-actions .btn {
+    flex: 0 0 auto;
+    padding: 11px 22px;
+    font-size: 0.72rem;
+    letter-spacing: 0.11em;
+  }
 }
 
 /* ─── Animations ─────────────────────────────────── */
