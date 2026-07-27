@@ -8,6 +8,9 @@
 
 /* ─── Variables ─────────────────────────────────── */
 :root {
+  /* Site is light-only by design — stops browsers (notably Samsung Internet's
+     auto dark mode) from guess-inverting colors and images like the logo. */
+  color-scheme: light;
   --crimson:        #8B1E2D;
   --crimson-dark:   #6B1521;
   --crimson-muted:  rgba(139, 30, 45, 0.10);
