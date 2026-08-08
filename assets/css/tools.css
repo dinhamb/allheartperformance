@@ -1,0 +1,119 @@
+/* ===================================================
+   All Heart Performance — Tools
+   Shared styling for the Tools hub and calculator pages.
+   Loaded only on /tools.html and /tools/*.html
+   =================================================== */
+
+/* ─── Tools hub: cards ───────────────────────────── */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 8px;
+}
+.tool-card {
+  display: block;
+  text-decoration: none;
+  background: rgba(255, 253, 248, 0.6);
+  border: 1px solid var(--warm-gray-lt);
+  border-radius: 2px;
+  padding: 30px 28px;
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.3s var(--ease);
+}
+.tool-card:hover {
+  border-color: var(--crimson);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+}
+.tool-card-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  margin-bottom: 10px;
+}
+.tool-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+.tool-card p {
+  font-size: 0.92rem;
+  color: var(--warm-gray-dk);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+.tool-card .text-link { font-size: 0.8rem; }
+
+/* ─── Calculator widget ──────────────────────────── */
+/* The widget markup carries inline styles that reference these custom
+   properties. They're scoped to .tool-widget (not :root) so the widget's
+   own palette can't leak into the rest of the site. Values map onto the
+   site tokens in styles.css: gold = best match, navy = informational,
+   crimson = caution. */
+.tool-widget {
+  --surface-1:      var(--cream);
+  --surface-2:      #FFFDF8;
+  --border:         #E3DED4;
+  --border-strong:  var(--warm-gray-lt);
+  --radius:         2px;
+  --text-primary:   var(--off-black);
+  --text-secondary: var(--warm-gray-dk);
+  --text-muted:     var(--warm-gray);
+  --text-accent:    var(--navy-mid);
+  --bg-accent:      #ECEEF4;
+  --text-success:   #8A6A22;
+  --bg-success:     #F7EFDD;
+  --text-warning:   var(--crimson);
+  --bg-warning:     #F7EBED;
+
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: rgba(255, 253, 248, 0.5);
+  border: 1px solid var(--warm-gray-lt);
+  border-radius: 2px;
+  padding: 32px 28px;
+  margin-top: 8px;
+}
+
+.tool-widget input,
+.tool-widget select {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  padding: 9px 11px;
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+  background: var(--surface-2);
+  color: var(--text-primary);
+  transition: border-color 0.2s var(--ease);
+}
+.tool-widget input:focus,
+.tool-widget select:focus {
+  outline: none;
+  border-color: var(--crimson);
+}
+.tool-widget input[type=checkbox],
+.tool-widget input[type=radio] {
+  width: auto;
+  accent-color: var(--crimson);
+}
+.tool-widget input[type=range] {
+  padding: 0;
+  border: none;
+  background: transparent;
+  accent-color: var(--crimson);
+}
+/* Numbers the widget renders large (rim width, depth, weight targets) */
+.tool-widget #iwOut,
+.tool-widget #depthOut,
+.tool-widget #wtOut {
+  font-family: var(--font-display);
+  color: var(--navy);
+}
+
+@media (max-width: 640px) {
+  .tool-widget { padding: 24px 18px; }
+  .tool-card   { padding: 26px 22px; }
+}

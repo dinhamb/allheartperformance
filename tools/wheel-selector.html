@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Wheel Selector: Rim Width, Depth &amp; Weight Calculator | All Heart Performance</title>
+  <meta name="description" content="Free wheel selector calculator. Find the right internal rim width, rim depth and wheelset weight for your tyres, terrain, FTP and rider weight — with ETRTO compatibility checked.">
+  <link rel="canonical" href="https://allheartperformance.com/tools/wheel-selector.html">
+  <link rel="icon" href="../assets/favicon.svg?v=5" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png?v=5">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png?v=5">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=5">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Wheel Selector — Rim Width, Depth &amp; Weight Calculator">
+  <meta property="og:description" content="Find the right rim width, depth and wheelset weight for your bike, terrain and power. Free calculator from All Heart Performance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://allheartperformance.com/tools/wheel-selector.html">
+  <meta property="og:image" content="https://allheartperformance.com/assets/images/logo/all-heart-logo.png">
+  <meta property="og:site_name" content="All Heart Performance">
+  <!-- Twitter/X card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Wheel Selector — Rim Width, Depth &amp; Weight Calculator">
+  <meta name="twitter:description" content="Find the right rim width, depth and wheelset weight for your bike, terrain and power.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../assets/css/styles.css?v=37">
+  <link rel="stylesheet" href="../assets/css/tools.css?v=1">
+</head>
+<body class="inner-page">
+
+  <!-- Navigation -->
+  <header class="site-header page" id="site-header">
+    <nav class="site-nav">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/logo/bannerlogo.png" alt="All Heart Performance" class="nav-logo-img nav-logo-dark">
+        <img src="../assets/images/logo/bannerlogo-rev.png" alt="All Heart Performance" class="nav-logo-img nav-logo-light">
+      </a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../coaching.html">Coaching</a></li>
+        <li><a href="../insights.html">Insights</a></li>
+        <li><a href="../tools.html" class="active">Tools</a></li>
+        <li><a href="../contact.html" class="nav-cta">Get In Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── Page Hero ──────────────────────────────── -->
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <p class="breadcrumb">
+          <a href="../index.html">Home</a><span>&ensp;/&ensp;</span><a href="../tools.html">Tools</a><span>&ensp;/&ensp;Wheel Selector</span>
+        </p>
+        <h1 class="page-title" style="font-size: clamp(2rem, 4vw, 3.1rem);">Wheel Selector</h1>
+      </div>
+    </div>
+
+    <section class="section reveal-on-scroll">
+      <div class="section-inner" style="max-width: 760px;">
+        <div class="about-body">
+
+          <h2 style="font-size: clamp(1.5rem, 2.6vw, 2rem); margin: 0 0 20px;">Find the right rim width, depth and weight for your bike, terrain and power</h2>
+
+          <p>Choosing wheels usually starts with a spec sheet and ends with a guess. Rim width, rim depth and wheelset weight all trade off against each other, and the right balance depends on your tyre size, your terrain, and how much power you actually produce — not just what's fastest on paper.</p>
+
+          <p>This calculator works through that trade-off the way we'd work through it for a coaching client: starting from your tyres and riding conditions, checking what's compatible, then weighing aero gain against weight penalty using your FTP and rider weight.</p>
+
+          <p>Enter your surface type, tyre sizes, FTP, rider weight and terrain below, and it will return:</p>
+
+          <ul style="margin: 0 0 20px 22px; color: var(--warm-gray-dk); line-height: 1.9;">
+            <li>A recommended internal rim width range, checked against your tyres for ETRTO compatibility</li>
+            <li>A recommended rim depth range, weighing aero gain against weight penalty for your terrain and power</li>
+            <li>A recommended wheelset weight range</li>
+            <li>Your tyres' expected measured width once mounted, so you can check it against your own frame clearance</li>
+            <li>A shortlist of carbon wheelsets scored against your specific profile</li>
+          </ul>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Calculator ─────────────────────────────── -->
+    <section class="section" style="padding-top: 0;">
+      <div class="section-inner" style="max-width: 760px;">
+
+<!-- ===== WIDGET MARKUP START ===== -->
+<div class="tool-widget">
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;">Wheel selector: enter surface type, tyre sizes, FTP, rider weight, terrain and crosswind exposure to get recommended rim width, depth and wheelset weight, plus scored wheelset matches.</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:1rem;">
+  <div>
+    <label style="font-size:13px;color:var(--text-secondary);display:block;margin-bottom:6px;">Surface type</label>
+    <select id="surface" style="width:100%;">
+      <option value="road">Road only</option>
+      <option value="mixed" selected>Mixed road/gravel</option>
+      <option value="gravel">Gravel only</option>
+    </select>
+  </div>
+  <div>
+    <label style="font-size:13px;color:var(--text-secondary);display:block;margin-bottom:6px;">FTP (watts)</label>
+    <input type="number" id="ftp" value="270" min="100" max="500" step="5" style="width:100%;" />
+  </div>
+  <div>
+    <label style="font-size:13px;color:var(--text-secondary);display:block;margin-bottom:6px;">Rider weight (kg)</label>
+    <input type="number" id="riderKg" value="75" min="40" max="150" step="1" style="width:100%;" />
+  </div>
+</div>
+
+<div id="roadTyres" style="margin-bottom:12px;">
+  <p style="font-size:13px;color:var(--text-secondary);margin:0 0 6px;">Road tyres (mm) — leave blank if not used</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;">
+    <div>
+      <label style="font-size:12px;color:var(--text-muted);display:block;margin-bottom:4px;">Training</label>
+      <input type="number" id="tyreRoadTrain" value="32" min="23" max="42" step="1" style="width:100%;" />
+    </div>
+    <div>
+      <label style="font-size:12px;color:var(--text-muted);display:block;margin-bottom:4px;">Race</label>
+      <input type="number" id="tyreRoadRace" value="28" min="23" max="42" step="1" style="width:100%;" />
+    </div>
+  </div>
+</div>
+
+<div id="gravelTyres" style="margin-bottom:1rem;">
+  <p style="font-size:13px;color:var(--text-secondary);margin:0 0 6px;">Gravel tyres (mm) — leave blank if not used</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;">
+    <div>
+      <label style="font-size:12px;color:var(--text-muted);display:block;margin-bottom:4px;">Training/adventure</label>
+      <input type="number" id="tyreGravelTrain" value="45" min="32" max="60" step="1" style="width:100%;" />
+    </div>
+    <div>
+      <label style="font-size:12px;color:var(--text-muted);display:block;margin-bottom:4px;">Race</label>
+      <input type="number" id="tyreGravelRace" value="40" min="32" max="60" step="1" style="width:100%;" />
+    </div>
+  </div>
+</div>
+
+<div style="background:var(--surface-1);border-radius:var(--radius);padding:12px 14px;margin-bottom:1.5rem;">
+  <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:10px;">
+    <label style="font-size:13px;color:var(--text-secondary);">Terrain</label>
+    <label style="font-size:13px;display:flex;align-items:center;gap:6px;"><input type="radio" name="tmode" value="simple" checked/> Simple</label>
+    <label style="font-size:13px;display:flex;align-items:center;gap:6px;"><input type="radio" name="tmode" value="manual"/> Manual</label>
+  </div>
+  <div id="simpleWrap">
+    <select id="terrainSimple" style="width:100%;max-width:240px;">
+      <option value="flat">Flat</option>
+      <option value="rolling" selected>Rolling</option>
+      <option value="mountain">Mountainous</option>
+    </select>
+  </div>
+  <div id="manualWrap" style="display:none;">
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+      <label style="font-size:13px;color:var(--text-secondary);white-space:nowrap;">Gradient threshold</label>
+      <input type="range" id="gradThresh" min="2" max="12" value="6" step="1" style="flex:1;min-width:100px;" />
+      <span style="font-size:14px;font-weight:500;min-width:36px;" id="gradThreshOut">6%</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+      <label style="font-size:13px;color:var(--text-secondary);white-space:nowrap;">Course above threshold</label>
+      <input type="range" id="gradPct" min="0" max="60" value="15" step="5" style="flex:1;min-width:100px;" />
+      <span style="font-size:14px;font-weight:500;min-width:36px;" id="gradPctOut">15%</span>
+    </div>
+  </div>
+  <div style="margin-top:12px;padding-top:10px;border-top:0.5px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+    <label style="font-size:13px;color:var(--text-secondary);white-space:nowrap;">Crosswind exposure</label>
+    <select id="crosswind" style="width:auto;">
+      <option value="none" selected>Not a concern</option>
+      <option value="some">Sometimes exposed</option>
+      <option value="high">Frequently exposed</option>
+    </select>
+  </div>
+  <div style="margin-top:10px;">
+    <label style="font-size:13px;display:flex;align-items:center;gap:8px;"><input type="checkbox" id="noHookless"/> Flag hookless wheelsets</label>
+  </div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:1.5rem;">
+  <div style="background:var(--surface-1);border-radius:var(--radius);padding:1rem;">
+    <p style="font-size:13px;color:var(--text-secondary);margin:0 0 4px;">Internal rim width</p>
+    <p style="font-size:22px;font-weight:500;margin:0;" id="iwOut">-</p>
+    <p style="font-size:13px;color:var(--text-secondary);margin:6px 0 0;line-height:1.5;" id="iwWhy">-</p>
+  </div>
+  <div style="background:var(--surface-1);border-radius:var(--radius);padding:1rem;">
+    <p style="font-size:13px;color:var(--text-secondary);margin:0 0 4px;">Rim depth</p>
+    <p style="font-size:22px;font-weight:500;margin:0;" id="depthOut">-</p>
+    <p style="font-size:13px;color:var(--text-secondary);margin:6px 0 0;line-height:1.5;" id="depthWhy">-</p>
+  </div>
+  <div style="background:var(--surface-1);border-radius:var(--radius);padding:1rem;">
+    <p style="font-size:13px;color:var(--text-secondary);margin:0 0 4px;">Wheelset weight target</p>
+    <p style="font-size:22px;font-weight:500;margin:0;" id="wtOut">-</p>
+    <p style="font-size:13px;color:var(--text-secondary);margin:6px 0 0;line-height:1.5;" id="wtWhy">-</p>
+  </div>
+</div>
+
+<p style="font-size:15px;font-weight:500;margin:0 0 8px;">Expected measured tyre width</p>
+<table style="width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed;">
+  <thead>
+    <tr style="border-bottom:0.5px solid var(--border-strong);">
+      <th style="text-align:left;padding:8px 6px;font-weight:500;color:var(--text-secondary);font-size:13px;">Tyre</th>
+      <th style="text-align:left;padding:8px 6px;font-weight:500;color:var(--text-secondary);font-size:13px;">Labelled</th>
+      <th style="text-align:left;padding:8px 6px;font-weight:500;color:var(--text-secondary);font-size:13px;">Measured</th>
+      <th style="text-align:left;padding:8px 6px;font-weight:500;color:var(--text-secondary);font-size:13px;">Clearance needed</th>
+    </tr>
+  </thead>
+  <tbody id="measBody"></tbody>
+</table>
+<p style="font-size:12px;color:var(--text-muted);margin:8px 0 1.5rem;line-height:1.6;">Measured width estimated on the recommended internal rim width; real casings vary by model. Clearance figure allows 4mm per side — add 2mm more for muddy conditions. Check against your own frame before buying.</p>
+
+<div id="flags" style="margin-bottom:1.5rem;"></div>
+
+<p style="font-size:15px;font-weight:500;margin:0 0 4px;">Wheelsets scored against this profile</p>
+<p style="font-size:13px;color:var(--text-secondary);margin:0 0 10px;">Rider suitability scores how well each wheel matches your inputs, not how good the wheel is overall.</p>
+<div id="wheelList" style="display:flex;flex-direction:column;gap:8px;"></div>
+
+<p style="font-size:12px;color:var(--text-muted);margin-top:1.5rem;line-height:1.6;">Suitability weights rim width fit at 40 points, depth fit at 30, weight fit at 20 and handling flags at 10. Width guidance follows ETRTO compatibility across the tyre sizes entered. Depth and weight guidance is heuristic, not a physics model. Specs are manufacturer-claimed at time of publishing and should be verified before purchase. Fitment, pressure limits and tyre or rim compatibility remain the responsibility of the rider.</p>
+</div>
+<!-- ===== WIDGET MARKUP END ===== -->
+
+      </div>
+    </section>
+
+    <!-- ── Explanatory copy ───────────────────────── -->
+    <section class="section reveal-on-scroll" style="padding-top: 0;">
+      <div class="section-inner" style="max-width: 760px;">
+        <div class="about-body">
+
+          <h2 style="font-size: clamp(1.5rem, 2.6vw, 2rem); margin: 36px 0 16px;">How rim width and tyre size actually interact</h2>
+          <p>The internal width of a rim changes how a tyre measures once it's mounted — a 40mm-labelled tyre can measure several millimetres wider on a 25mm internal rim than it does on a 19mm rim. That's why "what rim width for a 40mm gravel tyre" or "what internal rim width for 700x28" doesn't have one universal answer — it depends on the specific rim.</p>
+          <p>The ETRTO standard defines which tyre and rim widths are compatible, and this calculator checks your tyre sizes against it directly. If you run different tyres for training and racing, or split time between road and gravel, the calculator checks all of them together — a rim that's compatible with one tyre but not another isn't a real recommendation, just a partial one.</p>
+
+          <h2 style="font-size: clamp(1.5rem, 2.6vw, 2rem); margin: 36px 0 16px;">Rim depth: aero gain versus weight penalty</h2>
+          <p>Rim depth is where most buying guides default to "deeper is faster," which is only true in specific conditions. Aero benefit from a deeper rim scales with speed, which means it scales with your absolute power output more than your power-to-weight ratio. A rider producing 300 watts on flat terrain gets more from a deep rim than a lighter rider producing fewer absolute watts, even if the lighter rider has the better watts-per-kilo.</p>
+          <p>On climbing terrain, the maths flips. Rotating weight matters more than aerodynamics once gradient dominates the ride, and that's a power-to-weight question, not an absolute-power one. This calculator uses both numbers — separating where each one actually applies, rather than blending them into one vague "rider strength" score.</p>
+          <p>Wide tyres change this further. Once a tyre measures wider than the rim it's mounted to, the airflow transition at the rim-to-tyre junction is compromised, and no amount of extra rim depth fully corrects for it — though depth still contributes aero benefit on its own, just less than the same rim would return under a narrower tyre. This is a common blind spot in gravel wheel selection, where riders chase 50mm-plus rim depth on tyres already wider than any production rim.</p>
+
+          <h2 style="font-size: clamp(1.5rem, 2.6vw, 2rem); margin: 36px 0 16px;">Built for road, gravel and mixed riders</h2>
+          <p>Whether you're choosing a <strong>gravel wheelset</strong>, a <strong>road bike aero wheelset</strong>, or a single wheelset to cover both, the calculator adjusts its logic to the surface type you select. Mixed-surface riders get an additional check: because road and gravel tyres often sit at opposite ends of the width range, the tool flags when there's no single rim width that properly suits both, rather than quietly picking one and ignoring the other.</p>
+
+          <h2 style="font-size: clamp(1.5rem, 2.6vw, 2rem); margin: 36px 0 16px;">A note on the recommendations</h2>
+          <p>This tool gives sizing guidance and a shortlist of wheelsets that fit that guidance — it's a starting point for narrowing a wheel search, not a substitute for checking manufacturer specifications, frame clearance, or hookless rim pressure limits before you buy. Specs shown are manufacturer-claimed at time of publishing. Fitment and safety remain the rider's responsibility.</p>
+
+          <a href="../tools.html" class="text-link" style="display:inline-block; margin-top: 20px;">&larr; Back to Tools</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA Strip ──────────────────────────────── -->
+    <section class="cta-strip reveal-on-scroll">
+      <div class="cta-strip-inner">
+        <p class="cta-blurb">"Equipment is one decision among many. Want help with the rest of them?"</p>
+        <a href="../contact.html" class="btn btn-white">Get In Touch</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <img src="../assets/images/logo/logo-tagline.png" alt="All Heart Performance — Science implemented with heart" class="footer-logo" width="240">
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-nav-group">
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../about.html">About</a></li>
+              <li><a href="../coaching.html">Coaching</a></li>
+              <li><a href="../insights.html">Insights</a></li>
+              <li><a href="../tools.html">Tools</a></li>
+              <li><a href="../contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-group">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="mailto:hello@allheartperformance.com">Email</a></li>
+              <li><a href="https://instagram.com/allheartperformance" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 All Heart Performance. All rights reserved.</p>
+        <p class="footer-copy"><a href="../privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="../terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js?v=2"></script>
+
+<script>
+const wheels = [
+{n:"Zipp 303 XPLR SW",iw:32,ew:40,d:40,w:1350,hookless:true,max:125,tier:"Premium",use:["gravel","mixed"]},
+{n:"Parcours FKT",iw:27,ew:34,d:47,w:1500,hookless:true,max:120,tier:"Mid-premium",use:["gravel","mixed"]},
+{n:"Zipp 303 Firecrest",iw:25,ew:32,d:40,w:1409,hookless:true,max:120,tier:"Premium",use:["gravel","mixed","road"]},
+{n:"DT Swiss GRC 1400 Dicut 30",iw:24,ew:31,d:30,w:1350,hookless:false,max:120,tier:"Mid-premium",use:["gravel","mixed"]},
+{n:"DT Swiss GRC 1400 Dicut 50",iw:24,ew:31,d:50,w:1567,hookless:false,max:120,tier:"Mid",use:["gravel","mixed"]},
+{n:"Campagnolo Levante",iw:25,ew:32,d:35,w:1513,hookless:false,max:120,tier:"Premium",use:["gravel","mixed"]},
+{n:"Enve SES 6.7",iw:23,ew:30,d:67,w:1500,hookless:true,max:110,tier:"Premium",use:["road"]},
+{n:"Zipp 353 NSW",iw:25,ew:32,d:45,w:1307,hookless:true,max:110,tier:"Premium",use:["road","mixed"]},
+{n:"ENVE 65",iw:21,ew:28,d:65,w:1640,hookless:true,max:110,tier:"Mid-premium",use:["road"]},
+{n:"Zipp 303 S",iw:23,ew:30,d:43,w:1530,hookless:true,max:115,tier:"Mid",use:["road","mixed"]},
+{n:"Vision Metron RS 45",iw:23,ew:30,d:45,w:1450,hookless:false,max:115,tier:"Mid",use:["road","mixed"]},
+{n:"Boyd Podium Carbon Disc SL",iw:24,ew:31,d:35,w:1130,hookless:false,max:110,tier:"Mid",use:["road","mixed"]},
+{n:"Roval Alpinist SLX",iw:21,ew:28,d:33,w:1350,hookless:false,max:110,tier:"Premium",use:["road"]},
+{n:"Enve SES 4.5",iw:25,ew:32,d:50,w:1420,hookless:true,max:110,tier:"Premium",use:["road","mixed"]},
+{n:"Scope Artech 6.A",iw:23,ew:30,d:60,w:1520,hookless:false,max:115,tier:"Premium",use:["road"]},
+{n:"Roval Rapide CLX II",iw:21,ew:35,d:51,w:1520,hookless:true,max:110,tier:"Premium",use:["road"]}
+];
+
+function etrtoRange(t){
+  if(t<=25) return [17,21];
+  if(t<=28) return [19,23];
+  if(t<=32) return [19,25];
+  if(t<=38) return [21,27];
+  if(t<=45) return [23,30];
+  if(t<=50) return [25,32];
+  return [27,35];
+}
+function measured(t,iw){ return t+(iw-19)*0.4; }
+function val(id){ const v=parseFloat(document.getElementById(id).value); return (isNaN(v)||v<=0)?null:v; }
+function plural(n){ return n===1?'tyre':'tyres'; }
+
+function render(){
+  const surface=document.getElementById('surface').value;
+  const ftp=val('ftp')||270;
+  const kg=val('riderKg')||75;
+  const mode=document.querySelector('input[name=tmode]:checked').value;
+  const flagHookless=document.getElementById('noHookless').checked;
+  const cw=document.getElementById('crosswind').value;
+
+  document.getElementById('roadTyres').style.display=(surface==='gravel')?'none':'block';
+  document.getElementById('gravelTyres').style.display=(surface==='road')?'none':'block';
+  document.getElementById('simpleWrap').style.display=(mode==='simple')?'block':'none';
+  document.getElementById('manualWrap').style.display=(mode==='manual')?'block':'none';
+
+  let climbScore;
+  if(mode==='simple'){
+    const s=document.getElementById('terrainSimple').value;
+    climbScore=(s==='flat')?0.1:((s==='rolling')?0.45:0.85);
+  } else {
+    const gt=val('gradThresh')||6, gp=val('gradPct');
+    document.getElementById('gradThreshOut').textContent=gt+'%';
+    document.getElementById('gradPctOut').textContent=(gp===null?0:gp)+'%';
+    climbScore=Math.min(1,((gp===null?0:gp)/50)*(gt/6));
+  }
+
+  const wkgTxt=(ftp/kg).toFixed(1)+' W/kg';
+
+  const entries=[];
+  if(surface!=='gravel'){
+    const a=val('tyreRoadTrain'); if(a) entries.push({label:'Road training',w:a,race:false});
+    const b=val('tyreRoadRace'); if(b) entries.push({label:'Road race',w:b,race:true});
+  }
+  if(surface!=='road'){
+    const c=val('tyreGravelTrain'); if(c) entries.push({label:'Gravel training',w:c,race:false});
+    const d=val('tyreGravelRace'); if(d) entries.push({label:'Gravel race',w:d,race:true});
+  }
+
+  if(entries.length===0){
+    document.getElementById('iwOut').textContent='-';
+    document.getElementById('iwWhy').textContent='Enter at least one tyre width to get a recommendation.';
+    document.getElementById('depthOut').textContent='-';
+    document.getElementById('depthWhy').textContent='-';
+    document.getElementById('wtOut').textContent='-';
+    document.getElementById('wtWhy').textContent='-';
+    document.getElementById('measBody').innerHTML='<tr><td colspan="4" style="padding:10px 6px;color:var(--text-secondary);font-size:13px;">No tyre sizes entered.</td></tr>';
+    document.getElementById('flags').innerHTML='';
+    document.getElementById('wheelList').innerHTML='';
+    return;
+  }
+
+  const sizes=entries.map(function(e){ return e.w; });
+  let lo=0,hi=99;
+  sizes.forEach(function(t){ const r=etrtoRange(t); if(r[0]>lo) lo=r[0]; if(r[1]<hi) hi=r[1]; });
+  const widest=Math.max.apply(null,sizes), narrowest=Math.min.apply(null,sizes);
+  const n=entries.length;
+  const raceEntry=entries.filter(function(e){ return e.race; })[0]||entries[0];
+
+  const flags=[];
+  let iwText,iwMid,iwWhy;
+  const spanTxt=(n===1)?('your '+sizes[0]+'mm tyre'):('your '+n+' '+plural(n)+' ('+narrowest+'-'+widest+'mm)');
+  if(lo>hi){
+    iwMid=Math.round((lo+hi)/2)+3;
+    iwText=iwMid+' mm (compromise)';
+    iwWhy='No single rim covers '+narrowest+'-'+widest+'mm within ETRTO, so this width splits the difference rather than suiting any one size.';
+    flags.push(['warning','No overlapping ETRTO range across '+spanTxt+'. Consider narrowing the spread, or a second wheelset for the outlier size.']);
+  } else {
+    iwMid=Math.round(lo+(hi-lo)*0.6);
+    iwText=lo+'-'+hi+' mm';
+    iwWhy='ETRTO-compatible with '+spanTxt+', with '+iwMid+'mm the best single choice.';
+    if(hi-lo<=2) flags.push(['warning','Narrow compatible window ('+lo+'-'+hi+'mm) — close to the edge of ETRTO recommendations. Verify against your specific tyre and rim manufacturer limits.']);
+  }
+
+  const ew=iwMid+7;
+  const raceMeas=measured(raceEntry.w,iwMid);
+  const ratio=ew/raceMeas;
+  if(ratio>=1.03){
+    iwWhy+=' That gives roughly '+ew+'mm external against a '+raceMeas.toFixed(1)+'mm '+raceEntry.label.toLowerCase()+' tyre, so the rim stays wider than the tyre and airflow reattaches cleanly'+((ftp>=250)?' — worth having at '+ftp+'W, where you spend real time at speed.':', though at '+ftp+'W the aero return is modest.');
+  } else if(ratio>=0.95){
+    iwWhy+=' External width lands near '+ew+'mm against a '+raceMeas.toFixed(1)+'mm '+raceEntry.label.toLowerCase()+' tyre — close to parity, so the junction penalty is small'+((ftp>=280)?'. A few mm wider externally is a real but marginal gain at your power.':'. Chasing further width here would not repay the cost at your power.');
+  } else {
+    iwWhy+=' Your '+raceEntry.w+'mm tyre measures about '+raceMeas.toFixed(1)+'mm, wider than the roughly '+ew+'mm external rim, so the tyre sits proud of the rim and the junction sheds some airflow. Rim depth still works independently of this, but width tuning has less left to give.';
+  }
+
+  const aeroBias=Math.min(1,(ftp/kg)/5*0.5+(ftp/350)*0.5);
+  const base=30+aeroBias*35-climbScore*20;
+  let depthLo=Math.max(25,Math.round((base-7)/5)*5);
+  let depthHi=Math.max(35,Math.round((base+8)/5)*5);
+
+  let cwCap=99,cwNote='';
+  if(cw!=='none'){
+    if(kg<65) cwCap=(cw==='high')?45:50;
+    else if(kg<=85) cwCap=(cw==='high')?50:60;
+    else cwCap=(cw==='high')?60:99;
+    if(cwCap<depthHi){
+      depthHi=Math.max(depthLo+5,Math.round(cwCap/5)*5);
+      if(kg<65) cwNote=' Capped for crosswinds: at '+kg+'kg there is less mass resisting side loads, so a deep rim will move you around noticeably.';
+      else if(kg<=85) cwNote=' Capped for crosswinds: at '+kg+'kg moderate depth is manageable, but the deepest options stay a handful in gusts.';
+      else cwNote=' Lightly capped for crosswinds: at '+kg+'kg side loads matter less, so only the very deepest rims drop out.';
+    }
+  }
+
+  let depthWhy;
+  if(widest>=45){
+    depthHi=Math.min(depthHi,50);
+    depthWhy='At '+widest+'mm the tyre is wider than any production rim, so the rim-tyre junction is compromised whatever you choose. Depth still buys aero on its own, just less than the same rim would return under a narrower tyre — so weight and compliance carry more weight in the decision here.';
+  } else if(climbScore>0.6){
+    depthWhy='Steep terrain dominates here — shallower rims cut rotating weight where you need it, and your '+wkgTxt+' is better spent climbing than pushing a deep rim uphill.';
+  } else {
+    depthWhy='Your '+ftp+'W sustained means real time at speed, where deeper rims pay off — absolute watts drive aero benefit'+((climbScore>0.25)?', though the climbing here keeps it from being clear-cut.':' here.');
+  }
+  depthWhy+=cwNote;
+
+  const wtBase=1250+(widest-28)*8-climbScore*80+((kg>90)?80:0);
+  const wtLo=Math.round((wtBase-70)/25)*25, wtHi=Math.round((wtBase+120)/25)*25;
+  let wtWhy;
+  if(climbScore>0.6) wtWhy='Climbing-heavy terrain rewards low rotating mass. At '+wkgTxt+', every 100g saved is felt on sustained gradients.';
+  else if(kg>90) wtWhy='At '+kg+'kg, prioritise a stiffer, more robust build over the lightest option, and check the rider weight limit on any wheelset.';
+  else wtWhy='Weight matters less than rim profile on this terrain, and at '+ftp+'W the last 100g is not worth a large premium.';
+
+  document.getElementById('iwOut').textContent=iwText;
+  document.getElementById('iwWhy').textContent=iwWhy;
+  document.getElementById('depthOut').textContent=depthLo+'-'+depthHi+' mm';
+  document.getElementById('depthWhy').textContent=depthWhy;
+  document.getElementById('wtOut').textContent=wtLo+'-'+wtHi+' g';
+  document.getElementById('wtWhy').textContent=wtWhy;
+
+  document.getElementById('measBody').innerHTML=entries.map(function(e){
+    const m=measured(e.w,iwMid);
+    return '<tr style="border-bottom:0.5px solid var(--border);">'
+      +'<td style="padding:8px 6px;">'+e.label+'</td>'
+      +'<td style="padding:8px 6px;color:var(--text-secondary);">'+e.w+' mm</td>'
+      +'<td style="padding:8px 6px;font-weight:500;">'+m.toFixed(1)+' mm</td>'
+      +'<td style="padding:8px 6px;color:var(--text-secondary);">'+(m+8).toFixed(1)+' mm</td></tr>';
+  }).join('');
+
+  if(widest>=47 && surface!=='road'){
+    flags.push(['info','A 650b wheel would let you run a wider tyre at similar rolling diameter — worth considering if comfort or clearance is tight.']);
+  }
+
+  const scored=wheels.filter(function(w){ return w.use.indexOf(surface)>-1 && w.max>=kg+12; }).map(function(w){
+    let widthPts;
+    if(lo<=hi && w.iw>=lo && w.iw<=hi) widthPts=40-Math.min(8,Math.abs(w.iw-iwMid)*3);
+    else widthPts=Math.max(0,40-Math.abs(w.iw-iwMid)*9);
+    let depthPts=(w.d>=depthLo&&w.d<=depthHi)?30:Math.max(0,30-Math.min(Math.abs(w.d-depthLo),Math.abs(w.d-depthHi))*1.6);
+    let wtPts=(w.w<=wtHi)?20:Math.max(0,20-(w.w-wtHi)/15);
+    let handPts=10;
+    const cwOver=(cw!=='none'&&w.d>cwCap);
+    if(cwOver) handPts-=7;
+    if(flagHookless&&w.hookless) handPts-=5;
+    return Object.assign({},w,{score:Math.max(0,Math.round(widthPts+depthPts+wtPts+Math.max(0,handPts))),cwOver:cwOver,widthOk:(lo<=hi&&w.iw>=lo&&w.iw<=hi)});
+  }).sort(function(a,b){ return b.score-a.score; }).slice(0,6);
+
+  const excluded=wheels.filter(function(w){ return w.use.indexOf(surface)>-1 && w.max<kg+12; }).length;
+  if(excluded>0) flags.push(['info',excluded+' wheelset'+((excluded>1)?'s':'')+' excluded on rider weight limit for '+kg+'kg plus bike and kit.']);
+
+  document.getElementById('flags').innerHTML=flags.map(function(f){
+    const warn=(f[0]==='warning');
+    return '<div style="background:'+(warn?'var(--bg-warning)':'var(--bg-accent)')+';border-radius:var(--radius);padding:10px 12px;margin-bottom:8px;font-size:13px;color:'+(warn?'var(--text-warning)':'var(--text-accent)')+';line-height:1.5;">'+f[1]+'</div>';
+  }).join('');
+
+  document.getElementById('wheelList').innerHTML=(scored.length===0)
+    ? '<p style="font-size:14px;color:var(--text-secondary);margin:0;">No wheelsets clear your rider weight limit for this surface. Treat the spec ranges above as your shopping brief.</p>'
+    : scored.map(function(w){
+        const col=(w.score>=85)?'var(--text-success)':((w.score>=70)?'var(--text-accent)':'var(--text-muted)');
+        const bg=(w.score>=85)?'var(--bg-success)':((w.score>=70)?'var(--bg-accent)':'var(--surface-1)');
+        let tags='';
+        if(w.hookless&&flagHookless) tags+='<span style="font-size:12px;background:var(--bg-warning);color:var(--text-warning);padding:2px 8px;border-radius:var(--radius);margin-left:6px;">Hookless</span>';
+        else if(w.hookless) tags+='<span style="font-size:12px;color:var(--text-muted);margin-left:6px;">Hookless</span>';
+        if(!w.widthOk) tags+='<span style="font-size:12px;background:var(--bg-warning);color:var(--text-warning);padding:2px 8px;border-radius:var(--radius);margin-left:6px;">Outside ETRTO window</span>';
+        if(w.cwOver) tags+='<span style="font-size:12px;background:var(--bg-warning);color:var(--text-warning);padding:2px 8px;border-radius:var(--radius);margin-left:6px;">Deep for your crosswinds</span>';
+        return '<div style="background:var(--surface-2);border:0.5px solid var(--border);border-radius:2px;padding:12px 14px;">'
+          +'<div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;">'
+          +'<span style="font-weight:500;font-size:15px;flex:1;min-width:180px;">'+w.n+tags+'</span>'
+          +'<span style="text-align:right;white-space:nowrap;"><span style="display:block;font-size:11px;color:var(--text-muted);margin-bottom:2px;">Rider suitability</span>'
+          +'<span style="font-size:13px;font-weight:500;background:'+bg+';color:'+col+';padding:3px 10px;border-radius:var(--radius);">'+w.score+'/100</span></span></div>'
+          +'<p style="font-size:13px;color:var(--text-secondary);margin:8px 0 0;">'+w.iw+'mm internal · '+w.ew+'mm external · '+w.d+'mm deep · '+w.w+'g · limit '+w.max+'kg · '+w.tier+'</p></div>';
+      }).join('');
+}
+
+['surface','terrainSimple','crosswind'].forEach(function(id){ document.getElementById(id).addEventListener('change',render); });
+['tyreRoadTrain','tyreRoadRace','tyreGravelTrain','tyreGravelRace','ftp','riderKg','gradThresh','gradPct'].forEach(function(id){ document.getElementById(id).addEventListener('input',render); });
+document.getElementById('noHookless').addEventListener('change',render);
+document.querySelectorAll('input[name=tmode]').forEach(function(r){ r.addEventListener('change',render); });
+render();
+</script>
+
+</body>
+</html>

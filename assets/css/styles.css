@@ -960,18 +960,10 @@ img { display: block; max-width: 100%; }
 .nav-hamburger.open span:nth-child(2) { opacity: 0; }
 .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 /* ─── Responsive ─────────────────────────────────── */
-@media (max-width: 1024px) {
-  .services-grid      { grid-template-columns: repeat(2, 1fr); }
-  .about-layout       { grid-template-columns: 1fr; gap: 48px; }
-  .about-aside        { position: static; }
-  .about-card         { aspect-ratio: unset; min-height: 320px; padding: 40px 32px; }
-  .contact-layout     { grid-template-columns: 1fr; gap: 48px; }
-}
-
-@media (max-width: 768px) {
-  :root {
-    --pad-x: 24px;
-  }
+/* The horizontal nav stops fitting alongside the fixed-width logo well before
+   the 768px phone breakpoint — with six items it runs past the viewport and
+   clips the Get In Touch button. Switch to the drawer at 1000px instead. */
+@media (max-width: 1000px) {
   /* Light mobile bar to match the light hero: dark logo + dark hamburger */
   .site-header.solid .nav-logo-light,
   .site-header.page  .nav-logo-light { display: none; }
@@ -979,27 +971,6 @@ img { display: block; max-width: 100%; }
   .site-header.page  .nav-logo-dark  { display: block; }
   .site-header.solid .nav-hamburger span,
   .site-header.page .nav-hamburger span { background: var(--off-black); }
-  .section                 { padding: 72px var(--pad-x); }
-  .philosophy              { padding: 72px var(--pad-x); }
-  .cta-strip               { padding: 72px var(--pad-x); }
-  .about-quote-strip       { padding: 72px var(--pad-x); }
-  .services-grid           { grid-template-columns: 1fr; }
-  .pillars                 { grid-template-columns: 1fr; }
-  .pillar, .pillar + .pillar {
-    padding: 36px 0;
-    border-right: none;
-    border-bottom: 1px solid rgba(245, 242, 236, 0.10);
-  }
-  .pillar:last-child       { border-bottom: none; }
-  .footer-top              { flex-direction: column; }
-  .footer-nav              { gap: 32px; }
-  .contact-panel           { padding: 36px 28px; }
-  .hero                    { min-height: 520px; }
-  /* Nudge the crop on mobile so the recognisable rock stays in frame (runner falls off the left) */
-  .hero-bg                 { background-position: 40% 55%; }
-  .spread                  { padding: 96px var(--pad-x) 0; }
-  .cta-minimal             { padding: 72px var(--pad-x); margin-top: 64px; }
-  .cta-minimal p           { font-size: 1.1rem; line-height: 1.5; }
   .nav-logo-img            { width: 220px; max-width: 60vw; height: auto; }
   .nav-hamburger           { display: flex; }
   .nav-cta                 { display: block !important; background: none !important;
@@ -1026,6 +997,41 @@ img { display: block; max-width: 100%; }
   .nav-menu li a.active    { color: var(--crimson); }
   /* When the menu is open, the close (X) sits on the light panel — keep it dark */
   .nav-hamburger.open span { background: var(--off-black) !important; }
+}
+
+@media (max-width: 1024px) {
+  .services-grid      { grid-template-columns: repeat(2, 1fr); }
+  .about-layout       { grid-template-columns: 1fr; gap: 48px; }
+  .about-aside        { position: static; }
+  .about-card         { aspect-ratio: unset; min-height: 320px; padding: 40px 32px; }
+  .contact-layout     { grid-template-columns: 1fr; gap: 48px; }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --pad-x: 24px;
+  }
+  .section                 { padding: 72px var(--pad-x); }
+  .philosophy              { padding: 72px var(--pad-x); }
+  .cta-strip               { padding: 72px var(--pad-x); }
+  .about-quote-strip       { padding: 72px var(--pad-x); }
+  .services-grid           { grid-template-columns: 1fr; }
+  .pillars                 { grid-template-columns: 1fr; }
+  .pillar, .pillar + .pillar {
+    padding: 36px 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(245, 242, 236, 0.10);
+  }
+  .pillar:last-child       { border-bottom: none; }
+  .footer-top              { flex-direction: column; }
+  .footer-nav              { gap: 32px; }
+  .contact-panel           { padding: 36px 28px; }
+  .hero                    { min-height: 520px; }
+  /* Nudge the crop on mobile so the recognisable rock stays in frame (runner falls off the left) */
+  .hero-bg                 { background-position: 40% 55%; }
+  .spread                  { padding: 96px var(--pad-x) 0; }
+  .cta-minimal             { padding: 72px var(--pad-x); margin-top: 64px; }
+  .cta-minimal p           { font-size: 1.1rem; line-height: 1.5; }
 }
 /* ===================================================
    New components (v15): audience, steps, founder,
